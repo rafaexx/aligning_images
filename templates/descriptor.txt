@@ -1,0 +1,24 @@
+# Script based on http://photocreations.ca/panotools/stitch.txt
+# one 'p' line describing the output image
+p w1280 h1024 f2 v38.26  n"TIFF"
+
+# one 'i' line for each input image
+i n"{{ folder }}/{{ filename }}_0.tif"
+i n"{{ folder }}/{{ filename }}_1.tif"
+i n"{{ folder }}/{{ filename }}_2.tif"
+i n"{{ folder }}/{{ filename }}_3.tif"
+i n"{{ folder }}/{{ filename }}_4.tif"
+i n"{{ folder }}/{{ filename }}_5.tif"
+
+# one 'o' line for each input image
+o w1280 h1024 f4 Tpp0 Tpy0 TrX0 TrY0 TrZ0 a0 b0 c0 d0 e0 g0 p0 r0 t0 v38.2623610157963 y0
+o w1280 h1024 f4 Tpp0 Tpy0 TrX0 TrY0 TrZ0 a0 b0 c0 d0 e0 g0 p-0.259794592272038 r-0.0275179863495267 t0 v38.2623610157963 y-0.00565004184018598
+o w1280 h1024 f4 Tpp0 Tpy0 TrX0 TrY0 TrZ0 a0 b0 c0 d0 e0 g0 p0.00571249011910267 r0.0522550595085442 t0 v38.2623610157963 y-0.592949146863317
+o w1280 h1024 f4 Tpp0 Tpy0 TrX0 TrY0 TrZ0 a0 b0 c0 d0 e0 g0 p0.00804108968766203 r0.0161119997988701 t0 v38.2623610157963 y-0.300956243422781
+o w1280 h1024 f4 Tpp0 Tpy0 TrX0 TrY0 TrZ0 a0 b0 c0 d0 e0 g0 p-0.258799170351422 r0.0340678236278657 t0 v38.2623610157963 y-0.594841006516289
+o w1280 h1024 f4 Tpp0 Tpy0 TrX0 TrY0 TrZ0 a0 b0 c0 d0 e0 g0 p-0.273079998302778 r0.00451094912208607 t0 v38.2623610157963 y-0.30222521891663
+
+# the 'm' line is optional and allows you to specify modes for the optimization
+m g1 i0 f0 m2 p0.00784314
+
+# the 'C' line is optional and allows morphing of control points.
