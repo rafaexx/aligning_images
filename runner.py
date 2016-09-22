@@ -4,6 +4,8 @@
 import argparse
 import pystache
 import subprocess
+from time import sleep
+import datetime
 
 from os import listdir
 from os.path import isfile, join
@@ -49,8 +51,9 @@ def execute_command(occurs):
             filename,
             descriptor_folder,
             filename)
-        #print "  -->", cmd
+        print "  -->", cmd
         subprocess.Popen(cmd, shell=True, executable='/bin/bash')
+        sleep(5)
 
 parser = argparse.ArgumentParser(description='Script runner')
 parser.add_argument('--folder', help='Folder for locating files. I.e: tifs/')
@@ -59,6 +62,9 @@ parser.add_argument('--pattern', help='Pattern to ignore. I.e: _?.tif')
 args = parser.parse_args()
 
 if args.folder:
+    d0 = datetime.datetime.now()
     occurs = folder_to_occurs(args.folder, args.pattern)
     create_descriptors(occurs)
     execute_command(occurs)
+    print "--------->END", datetime.datetime.now() - d0
+
